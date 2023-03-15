@@ -2,13 +2,13 @@ from selenium.webdriver.common.by import By
 
 
 class ResultBing:
-    # Locators
-    RESULT_LINKS = (By.CLASS_NAME, "b_title")
-    SEARCH_INPUT = (By.ID, "sb_form_q")
-
     # Initializer
     def __init__(self, driver):
         self.driver = driver
+
+    # Locators
+    SEARCH_INPUT = (By.ID, "searchbox")
+    RESULT_LINKS = (By.CLASS_NAME, "snippet-title")
 
     # Interaction Methods
     def result_link_titles(self):
