@@ -1,0 +1,12 @@
+Scenario: Basic Web Form
+    Given the Web Form page is displayed
+    When the user type the inputs
+    Then the user click submit
+    And the page change to "form submitted"
+    And the page shows Received!
+
+
+Note:
+https://automationpanda.com/2021/05/11/should-gherkin-steps-use-past-present-or-future-tense/
+https://docs.pytest.org/en/7.2.x/
+https://selenium-python.readthedocs.io/
