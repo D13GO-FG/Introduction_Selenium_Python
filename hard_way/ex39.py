@@ -8,15 +8,9 @@ states = {
 }
 
 # create a basic set of states and some cities in them
-cities = {
-    'CA': 'San Francisco',
-    'MI': 'Detroit',
-    'FL' : 'Jacksonville'
-}
+cities = {'CA': 'San Francisco', 'MI': 'Detroit', 'FL': 'Jacksonville', 'NY': 'New York', 'OR': 'Portland'}
 
 # add some more cities
-cities['NY'] = 'New York'
-cities['OR'] = 'Portland'
 
 # print out some cities
 print('-' * 10)
@@ -40,7 +34,7 @@ for state, abbrev in list(states.items()):
     print(f"and has city {cities[abbrev]}")
 print('-' * 10)
 
-# safely get a abbreviation by state that might not be there
+# safely get an abbreviation by state that might not be there
 state = states.get('Texas')
 
 if not state:
