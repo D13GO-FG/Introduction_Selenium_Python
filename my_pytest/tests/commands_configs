@@ -1,4 +1,4 @@
-python -m pytest help
+python -m pytest --help
 
 python -m pytest --verbose
 
