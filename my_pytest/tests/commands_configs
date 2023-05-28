@@ -1,0 +1,12 @@
+python -m pytest help
+
+python -m pytest --verbose
+
+python -m pytest --quiet
+
+python -m pytest --exitfirst
+
+python -m pytest --maxfail=1
+
+python -m pytest --junit-xml -report.xml
+
