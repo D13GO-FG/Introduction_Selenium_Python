@@ -12,35 +12,39 @@ from ..stuff.accum import Accumulator
 
 
 # --------------------------------------------------------------------------------
+# Fixtures
+# --------------------------------------------------------------------------------
+
+# if you use yield is a generator.
+@pytest.fixture
+def accu():
+    return Accumulator()
+
+
+# --------------------------------------------------------------------------------
 # Tests
 # --------------------------------------------------------------------------------
 
-def test_accumulator_init():
-    accu = Accumulator()
+def test_accumulator_init(accu):
     assert accu.count == 0
 
 
-def test_accumulator_add_one():
-    accu = Accumulator()
+def test_accumulator_add_one(accu):
     accu.add()
     assert accu.count == 1
 
 
-def test_accumulator_add_three():
-    accu = Accumulator()
+def test_accumulator_add_three(accu):
     accu.add(3)
     assert accu.count == 3
 
 
-def test_accumulator_add_twice():
-    accu = Accumulator()
+def test_accumulator_add_twice(accu):
     accu.add()
     accu.add()
     assert accu.count == 2
 
 
-def test_accumulator_cannot_set_count_directly():
-    accu = Accumulator()
+def test_accumulator_cannot_set_count_directly(accu):
     with pytest.raises(AttributeError, match=r"property 'count' of 'Accumulator' object has no setter") as e:
         accu.count = 10
-
