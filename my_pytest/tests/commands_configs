@@ -1,3 +1,5 @@
+## Commands
+
 python -m pytest --help
 
 python -m pytest --verbose
@@ -10,3 +12,24 @@ python -m pytest --maxfail=1
 
 python -m pytest --junit-xml -report.xml
 
+### Test filtering
+
+python -m pytest tests ## Success
+
+python -m pytest stuff  ## Fail
+
+python -m pytest tests/test_accum.py
+
+python -m pytest tests/test_math.py::test_one_plus_one
+
+python -m pytest -k -one  ## substring of testcase
+
+python -m pytest -k "one and not accum"
+
+## Running using mark
+
+python -m math      ## Confing previous defined
+
+## There is a difference between testing code and testing features.
+1. White Box: Is the code written to do expected things? Unit or Subcutaneous
+2. Black Box: Does the product meet the requirements? Integration or End to End

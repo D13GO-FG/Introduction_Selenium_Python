@@ -25,26 +25,31 @@ def accu():
 # Tests
 # --------------------------------------------------------------------------------
 
+@pytest.mark.accumulator
 def test_accumulator_init(accu):
     assert accu.count == 0
 
 
+@pytest.mark.accumulator
 def test_accumulator_add_one(accu):
     accu.add()
     assert accu.count == 1
 
 
+@pytest.mark.accumulator
 def test_accumulator_add_three(accu):
     accu.add(3)
     assert accu.count == 3
 
 
+@pytest.mark.accumulator
 def test_accumulator_add_twice(accu):
     accu.add()
     accu.add()
     assert accu.count == 2
 
 
+@pytest.mark.accumulator
 def test_accumulator_cannot_set_count_directly(accu):
     with pytest.raises(AttributeError, match=r"property 'count' of 'Accumulator' object has no setter") as e:
         accu.count = 10
