@@ -33,3 +33,19 @@ python -m math      ## Confing previous defined
 ## There is a difference between testing code and testing features.
 1. White Box: Is the code written to do expected things? Unit or Subcutaneous
 2. Black Box: Does the product meet the requirements? Integration or End to End
+
+## Plugins
+# Report test cases
+pip install pytest-html
+python -m pytest --html=report.html
+
+# Coverage output in specific file or directory 0 - 100 %
+pip install pytest-cov
+python -m pytest --cov=stuff --cov-report html
+
+# Run multi test in parallel
+pip install pytest-xdist
+python -m pytest -n 3
+
+# BDD
+pip install pytest-bdd
